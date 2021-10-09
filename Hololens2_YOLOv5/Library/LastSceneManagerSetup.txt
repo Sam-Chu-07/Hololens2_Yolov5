@@ -1,0 +1,5 @@
+sceneSetups:
+- path: Assets/MRTK_Yolov5/Scenes/Myscene.unity
+  isLoaded: 1
+  isActive: 1
+  isSubScene: 0

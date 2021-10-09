@@ -1,0 +1,28 @@
+{
+    "elements": [
+        {
+            "name": "麥香奶茶",
+            "category": "Springgreen",
+            "spectral_img": null,
+            "ypos": 0,
+            "symbol": "麥香\n奶茶",
+	    "price": "10",
+            "number": "87",
+            "summary": "醇厚紅茶結合大麥香氣與乳粉調配,呈現具獨特大麥及焦糖風味的奶茶",
+            "xpos": 0,
+	    "material":"水、蔗糖、紅茶、全脂乳粉、脫脂乳粉、脂肪酸蔗糖酯、抗氧化劑(L-抗壞血酸鈉)、大麥萃取液、小蘇打、香料"
+        },
+	{
+            "name": "麥香紅茶",
+            "category": "Yellow",
+            "spectral_img": null,
+            "ypos": 0,
+            "symbol": "麥香\n紅茶",
+	    "price": "10",
+            "number": "87",
+            "summary": "醇厚紅茶結合焙炒大麥，成就獨特大麥風味、暢銷全台的紅茶飲料",
+            "xpos": 1,
+	    "material":"水、蔗糖、紅茶、全脂乳粉、脫脂乳粉、脂肪酸蔗糖酯、抗氧化劑(L-抗壞血酸鈉)、大麥萃取液、小蘇打、香料"
+        }
+     ]
+}
