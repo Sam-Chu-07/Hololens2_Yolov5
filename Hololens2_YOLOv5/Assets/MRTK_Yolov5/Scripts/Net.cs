@@ -48,7 +48,6 @@ namespace HoloToolkit.Yolov5.ObjectDetection
             try
             {
                 ObjectCreator = GetComponent<PeriodicTableLoader>();
-                ObjectCreator.test();
                 StatusBlock.text = "Running";
 
                 // Run processing loop in separate parallel Task, get the latest frame
@@ -93,10 +92,9 @@ namespace HoloToolkit.Yolov5.ObjectDetection
         async void Update()
         {
             update += Time.deltaTime;
-            StatusBlock.text = "     " + _isRunning;
+
             if (_isRunning == true && update >= 1.0f && ObjectCreator.Lock == false)
             {
-                update = 0;
                 _isRunning = false;
 #if ENABLE_WINMD_SUPPORT
                 var lastFrame = frameGrabber.LastFrame;
@@ -108,6 +106,7 @@ namespace HoloToolkit.Yolov5.ObjectDetection
                         {
                             if (videoFrame != null && videoFrame.SoftwareBitmap != null)
                             {
+                                update = 0;
                                 var byteArray = await toByteArray(videoFrame.SoftwareBitmap);
                                 Debug.Log($"[### DEBUG ###] byteArray Size = {byteArray.Length}");
                                 ObjectPrediction(byteArray);
@@ -119,8 +118,6 @@ namespace HoloToolkit.Yolov5.ObjectDetection
                     catch (Exception ex)
                     {
                         Debug.Log($"[### Deebug ###] Update Error: {ex.Message}");
-                        //_isRunning = false;
-                        //return;
                     }
                 }
                 else
@@ -181,18 +178,17 @@ namespace HoloToolkit.Yolov5.ObjectDetection
                             Manufacturer = box["manufacturer"].ToString(),
                             Ingredients = box["ingredient"].ToString(),
                             Calorie = box["calorie"].ToObject<float>(),
+                            Color = box["color"].ToObject<int>(),
                             Note = box["note"].ToString(),
-                            X = x + width / 2,
-                            Y = y + height / 2,
+                            X = x + width,
+                            Y = y + height,
                         });
                     }
 
-                    Debug.Log("5");
                     ObjectCreator.CreateElement(goodsInfo);
                 }
                 else
                 {
-                    Debug.Log("7");
                     ObjectCreator.ClearElement();
                 }
             }
@@ -211,7 +207,6 @@ namespace HoloToolkit.Yolov5.ObjectDetection
                 Debug.Log($"[### Debug ###] Error: {ex.Message} ");
                 throw;
             }
-            Debug.Log("9");
         }
     }
 }

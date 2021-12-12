@@ -6,10 +6,6 @@ ScriptsOnlyBuild:
     - HoloToolkit.Yolov5.ObjectDetection.NetworkBehaviour
     - HoloToolkit.Yolov5.ObjectDetection.PeriodicTableLoader
     - HoloToolkit.Yolov5.ObjectDetection.PresentToPlayer
-    Microsoft.MixedReality.Toolkit.Editor.Inspectors.dll:
-    - Microsoft.MixedReality.Toolkit.Diagnostics.Editor.MixedRealityDiagnosticsSystemProfileInspector
-    - Microsoft.MixedReality.Toolkit.Editor.MixedRealityToolkitConfigurationProfileInspector
-    - Microsoft.MixedReality.Toolkit.SpatialAwareness.Editor.MixedRealitySpatialAwarenessSystemProfileInspector
     Microsoft.MixedReality.Toolkit.Editor.Utilities.dll:
     - Microsoft.MixedReality.Toolkit.Utilities.Editor.ProjectPreferences
     Microsoft.MixedReality.Toolkit.Providers.WindowsMixedReality.Shared.dll:
@@ -96,6 +92,7 @@ ScriptsOnlyBuild:
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.UI.CanvasScaler
+    - UnityEngine.UI.ContentSizeFitter
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.Mask
@@ -190,6 +187,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11998}
     - Class: 114
       Script: {instanceID: 12024}
+    - Class: 114
+      Script: {instanceID: 12100}
     - Class: 114
       Script: {instanceID: 12168}
     - Class: 114
@@ -719,7 +718,7 @@ ScriptsOnlyBuild:
     className: BaseServiceManager
   - hash:
       serializedVersion: 2
-      Hash: 63c4b15b03c909a4dd999937a2e40347
+      Hash: 9dd468fb723c80e21494a4f2bb1cc020
     assemblyName: Assembly-CSharp.dll
     namespaceName: HoloToolkit.Yolov5.ObjectDetection
     className: Element
@@ -2478,4 +2477,4 @@ ScriptsOnlyBuild:
   platform: 21
   scenePathNames:
   - Assets/MRTK_Yolov5/Scenes/Myscene.unity
-  playerPath: D:/MyProject/Hololens2_YOLOv5/Builds_Win
+  playerPath: D:/MyProject/Hololens2_YOLOv5/Build

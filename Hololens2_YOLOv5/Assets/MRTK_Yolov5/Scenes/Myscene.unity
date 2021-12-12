@@ -268,12 +268,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405761073}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22a8e7b1eba83284da617e07f68119de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IP: 10.10.10.164
+  IP: 192.168.2.100
   StatusBlock: {fileID: 1234903694}
 --- !u!114 &405761077
 MonoBehaviour:
@@ -282,12 +282,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405761073}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14323c0aa8e66a241889480ccb08cd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IP: 10.10.10.164
+  IP: 10.10.10.185
   StatusBlock: {fileID: 1234903694}
 --- !u!1 &705507993
 GameObject:

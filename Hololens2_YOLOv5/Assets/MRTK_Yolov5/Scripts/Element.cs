@@ -128,8 +128,8 @@ namespace HoloToolkit.Yolov5.ObjectDetection
             DataPrice.text = "NT$ " + data.Price.ToString();
 
             // Set up our materials
-            System.Random Ran = new System.Random();//Ran.Next(1, 10)
-            typeMaterials.TryGetValue(9, out dimMaterial);
+            //System.Random Ran = new System.Random();//Ran.Next(1, 10)
+            typeMaterials.TryGetValue(data.Color, out dimMaterial);
             
             Dim();
 

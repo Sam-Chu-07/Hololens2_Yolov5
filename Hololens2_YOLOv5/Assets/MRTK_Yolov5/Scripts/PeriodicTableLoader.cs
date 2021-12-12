@@ -40,12 +40,13 @@ namespace HoloToolkit.Yolov5.ObjectDetection
     public class GoodsData
     {
         public string Name;         // 商品名稱
-        public string Symbol;           // 商品價格
+        public string Symbol;       // 商品價格
         public int Price;           // 商品價格
         public string Manufacturer; // 製造商
         public string Ingredients;  // 商品成分
         public float Calorie;       // 熱量
-        public string Note;       // 備註
+        public int Color;           // 物件材質顏色
+        public string Note;         // 備註
         public float X;
         public float Y;
     }
@@ -79,7 +80,7 @@ namespace HoloToolkit.Yolov5.ObjectDetection
         public Material MatPink;
 
         public bool Lock = false;
-        private float preserveDistance = 0.03f;
+        private float preserveDistance = 0.05f;
         private Dictionary<int, Material> typeMaterials;
         private List<GameObject> _CreatedObjects;
 
@@ -104,22 +105,10 @@ namespace HoloToolkit.Yolov5.ObjectDetection
                 { 8, MatPurple },
                 { 9, MatPink },
             };
-
-            // Insantiate the element prefabs in their correct locations and with correct text
-            /*foreach (ElementData element in elements)
-            {
-                Debug.Log("test"+element.name);
-                GameObject newElement = Instantiate<GameObject>(ElementPrefab, Parent);
-                newElement.GetComponentInChildren<Element>().SetFromElementData(element, typeMaterials);
-                newElement.transform.localPosition = new Vector3(element.xpos * ElementSeperationDistance - ElementSeperationDistance * 18 / 2, ElementSeperationDistance * 9 - element.ypos * ElementSeperationDistance, 2.0f);
-                newElement.transform.localRotation = Quaternion.identity;
-            }*/
         }
 
         public void CreateElement(List<GoodsData> goodsInfo)
         {
-
-            Debug.Log("[### Debug ###]in create element");
             if (Lock)
                 return;
 

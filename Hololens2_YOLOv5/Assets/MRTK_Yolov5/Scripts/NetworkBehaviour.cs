@@ -42,7 +42,6 @@ namespace HoloToolkit.Yolov5.ObjectDetection
 			{
 				ObjectCreator = GetComponent<PeriodicTableLoader>();
 				ObjectCreator.test();
-				//StatusBlock.text = "Running";
 
 				// Run processing loop in separate parallel Task, get the latest frame
 				try
@@ -64,7 +63,6 @@ namespace HoloToolkit.Yolov5.ObjectDetection
 
 				// Start Photo Capture and send it to Server
 				PhotoCapture.CreateAsync(false, OnPhotoCaptureCreated);
-				//InvokeRepeating("MyUpdate", 1.0f, 1.0f);
 			}
 			catch (Exception ex)
 			{
@@ -82,7 +80,6 @@ namespace HoloToolkit.Yolov5.ObjectDetection
         void Update()
 		{
 			update += Time.deltaTime;
-			//StatusBlock.text = "     " + _isRunning;
 			
 			if (_isRunning == true && update >= 0.5f && ObjectCreator.Lock == false)
 			{
@@ -115,7 +112,6 @@ namespace HoloToolkit.Yolov5.ObjectDetection
 
 		void OnPhotoCaptureCreated(PhotoCapture captureObject)
 		{
-			Debug.Log("[### DEBUG ###] In OnPhotoCaptureCreated");
 			photoCaptureObject = captureObject;
 
 			IEnumerable<Resolution> availableResolutions = PhotoCapture.SupportedResolutions;
@@ -194,6 +190,7 @@ namespace HoloToolkit.Yolov5.ObjectDetection
 								Manufacturer = box["manufacturer"].ToString(),
 								Ingredients = box["ingredient"].ToString(),
 								Calorie = box["calorie"].ToObject<float>(),
+								Color = box["color"].ToObject<int>(),
 								Note = box["note"].ToString(),
 								X = x + width/2,
 								Y = y + height/2,
